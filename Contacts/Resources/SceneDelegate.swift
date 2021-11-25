@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  iBuy
+//  ContactsApp
 //
-//  Created by Camilo Jimenez on 3/08/21.
+//  Created by Camilo Jimenez on 25/11/21.
 //
 
 import UIKit
@@ -16,15 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let winScene = (scene as? UIWindowScene) else { return }
-        self.window = UIWindow(windowScene: winScene)
-        guard let rootVC = UIStoryboard
-                .init(name: Constants.SBIdentifier.generations, bundle: nil)
-                .instantiateViewController(identifier: Constants.SBIdentifier.generations) as? GenerationsVC else {return}
-
-        let rootNC = UINavigationController(rootViewController: rootVC)
-        self.window?.rootViewController = rootNC
-        self.window?.makeKeyAndVisible()
+        guard let _ = (scene as? UIWindowScene) else { return }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
