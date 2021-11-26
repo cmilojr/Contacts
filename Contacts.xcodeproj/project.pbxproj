@@ -14,9 +14,11 @@
 		B32401D426BA19DA00102998 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B32401D226BA19DA00102998 /* LaunchScreen.storyboard */; };
 		B341297226C2331D000A1ED2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B341297126C2331D000A1ED2 /* Extensions.swift */; };
 		B3445952986B70F749C59079 /* Pods_Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72CE4498139C45CBE13B0527 /* Pods_Contacts.framework */; };
-		B35029CF26EC26BC006AE134 /* GenerationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35029CE26EC26BC006AE134 /* GenerationsModel.swift */; };
 		B35B5FB626BB8FC80067C8DA /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35B5FB526BB8FC80067C8DA /* Networking.swift */; };
 		B36C566C26BDA0D100594EED /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36C566B26BDA0D100594EED /* Constants.swift */; };
+		B3728AAD2751385C00D005D3 /* ContactsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3728AAC2751385C00D005D3 /* ContactsVM.swift */; };
+		B3728AAF2751387B00D005D3 /* ContactDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3728AAE2751387B00D005D3 /* ContactDetailVM.swift */; };
+		B3728AB1275138C400D005D3 /* ContactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3728AB0275138C400D005D3 /* ContactsModel.swift */; };
 		B3758FFE27501981000429E5 /* ContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3758FFD27501981000429E5 /* ContactsVC.swift */; };
 		B3759000275019E6000429E5 /* Contacts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3758FFF275019E6000429E5 /* Contacts.storyboard */; };
 		B375902227502AD9000429E5 /* ContactDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B375902127502AD9000429E5 /* ContactDetail.storyboard */; };
@@ -26,7 +28,6 @@
 		B375902B27505318000429E5 /* InfoDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B375902927505318000429E5 /* InfoDetailCell.swift */; };
 		B375902C27505318000429E5 /* InfoDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B375902A27505318000429E5 /* InfoDetailCell.xib */; };
 		B39EA20126F2415B00F5AE25 /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39EA20026F2415B00F5AE25 /* NetworkingTests.swift */; };
-		B3DE07BC26EFB2A600EAE863 /* PokemonDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DE07BB26EFB2A600EAE863 /* PokemonDetailModel.swift */; };
 		D7F42A7E0899EC1674B5334B /* Pods_ContactsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA20929AA6358044ECBFA5C1 /* Pods_ContactsTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,9 +56,11 @@
 		B32401D326BA19DA00102998 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B32401D526BA19DA00102998 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B341297126C2331D000A1ED2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		B35029CE26EC26BC006AE134 /* GenerationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationsModel.swift; sourceTree = "<group>"; };
 		B35B5FB526BB8FC80067C8DA /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		B36C566B26BDA0D100594EED /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B3728AAC2751385C00D005D3 /* ContactsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsVM.swift; sourceTree = "<group>"; };
+		B3728AAE2751387B00D005D3 /* ContactDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailVM.swift; sourceTree = "<group>"; };
+		B3728AB0275138C400D005D3 /* ContactsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsModel.swift; sourceTree = "<group>"; };
 		B3758FFD27501981000429E5 /* ContactsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContactsVC.swift; path = Contacts/Controllers/ContactsVC.swift; sourceTree = SOURCE_ROOT; };
 		B3758FFF275019E6000429E5 /* Contacts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Contacts.storyboard; sourceTree = "<group>"; };
 		B375902127502AD9000429E5 /* ContactDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContactDetail.storyboard; sourceTree = "<group>"; };
@@ -67,7 +70,6 @@
 		B375902927505318000429E5 /* InfoDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDetailCell.swift; sourceTree = "<group>"; };
 		B375902A27505318000429E5 /* InfoDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoDetailCell.xib; sourceTree = "<group>"; };
 		B39EA20026F2415B00F5AE25 /* NetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTests.swift; sourceTree = "<group>"; };
-		B3DE07BB26EFB2A600EAE863 /* PokemonDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailModel.swift; sourceTree = "<group>"; };
 		C2C93811C0CAA75646345CEB /* Pods-Contacts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Contacts.debug.xcconfig"; path = "Target Support Files/Pods-Contacts/Pods-Contacts.debug.xcconfig"; sourceTree = "<group>"; };
 		CA20929AA6358044ECBFA5C1 /* Pods_ContactsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContactsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -148,8 +150,7 @@
 		B32401F726BA446200102998 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B35029CE26EC26BC006AE134 /* GenerationsModel.swift */,
-				B3DE07BB26EFB2A600EAE863 /* PokemonDetailModel.swift */,
+				B3728AB0275138C400D005D3 /* ContactsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,6 +169,8 @@
 		B32401FA26BA448200102998 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				B3728AAC2751385C00D005D3 /* ContactsVM.swift */,
+				B3728AAE2751387B00D005D3 /* ContactDetailVM.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -411,15 +414,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B375902727502DB5000429E5 /* ContactCell.swift in Sources */,
-				B3DE07BC26EFB2A600EAE863 /* PokemonDetailModel.swift in Sources */,
+				B3728AAF2751387B00D005D3 /* ContactDetailVM.swift in Sources */,
 				B32401C826BA19D800102998 /* AppDelegate.swift in Sources */,
-				B35029CF26EC26BC006AE134 /* GenerationsModel.swift in Sources */,
 				B3758FFE27501981000429E5 /* ContactsVC.swift in Sources */,
+				B3728AAD2751385C00D005D3 /* ContactsVM.swift in Sources */,
 				B375902B27505318000429E5 /* InfoDetailCell.swift in Sources */,
 				B32401CA26BA19D800102998 /* SceneDelegate.swift in Sources */,
 				B341297226C2331D000A1ED2 /* Extensions.swift in Sources */,
 				B35B5FB626BB8FC80067C8DA /* Networking.swift in Sources */,
 				B36C566C26BDA0D100594EED /* Constants.swift in Sources */,
+				B3728AB1275138C400D005D3 /* ContactsModel.swift in Sources */,
 				B375902427502B01000429E5 /* ContactDetailVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
