@@ -1,5 +1,5 @@
 //
-//  ContactsVC.swift
+//  ContactDetailVC.swift
 //  Contacts
 //
 //  Created by Camilo Jimenez on 25/11/21.
@@ -7,14 +7,15 @@
 
 import UIKit
 
-class ContactsVC: UIViewController {
-    @IBOutlet weak var contactsTableView: UITableView!
+class ContactDetailVC: UIViewController {
+    @IBOutlet weak var detailInfoTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let nib = UINib(nibName: Constants.CellIdentifier.contactCell, bundle: nil)
-        contactsTableView.register(nib, forCellReuseIdentifier: Constants.CellIdentifier.contactCell)
+        
+        let nib = UINib(nibName: Constants.CellIdentifier.infoDetailCell, bundle: nil)
+        detailInfoTableView.register(nib, forCellReuseIdentifier: Constants.CellIdentifier.infoDetailCell)
     }
     
 
@@ -30,19 +31,19 @@ class ContactsVC: UIViewController {
 
 }
 
-extension ContactsVC: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: Constants.SegueIdentifier.showDetailSegue, sender: nil)
-    }
-}
-
-extension ContactsVC: UITableViewDataSource {
+extension ContactDetailVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifier.contactCell, for: indexPath) as! ContactCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifier.infoDetailCell, for: indexPath) as! InfoDetailCell
         return cell
     }
+    
+    
+}
+
+extension ContactDetailVC: UITableViewDelegate {
+    
 }

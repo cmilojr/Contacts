@@ -13,7 +13,12 @@ struct Constants {
     }
     
     struct CellIdentifier {
-        
+        static let contactCell = "ContactCell"
+        static let infoDetailCell = "InfoDetailCell"
+    }
+    
+    struct SegueIdentifier {
+        static let showDetailSegue = "showDetailSegue"
     }
     
     struct SBIdentifier {

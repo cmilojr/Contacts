@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactCell" rowHeight="106" id="KGk-i7-Jjw" customClass="ContactCell" customModule="Contacts" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="396" height="106"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="396" height="106"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TinyUser" translatesAutoresizingMaskIntoConstraints="NO" id="15l-Py-jwP">
+                        <rect key="frame" x="20" y="20" width="70" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="bVP-Pk-PiU"/>
+                            <constraint firstAttribute="height" constant="70" id="vIM-Xz-QkE"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Tsj-a9-NK8">
+                        <rect key="frame" x="140" y="34.5" width="236" height="41"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bernard Laboy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGm-Jj-5f3">
+                                <rect key="frame" x="0.0" y="0.0" width="111.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Century 21 Keenwaydin Prop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTY-Jf-Xnm">
+                                <rect key="frame" x="0.0" y="20.5" width="217.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemGray3Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StarFill" translatesAutoresizingMaskIntoConstraints="NO" id="1xY-H9-Lyh">
+                        <rect key="frame" x="115" y="34.5" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="agC-VH-oum"/>
+                            <constraint firstAttribute="height" constant="20" id="lkn-Tq-3kd"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Tsj-a9-NK8" secondAttribute="trailing" constant="20" id="2g2-nt-EZI"/>
+                    <constraint firstItem="15l-Py-jwP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="845-DN-gsq"/>
+                    <constraint firstItem="1xY-H9-Lyh" firstAttribute="top" secondItem="oGm-Jj-5f3" secondAttribute="top" id="GEE-0Y-9mW"/>
+                    <constraint firstItem="Tsj-a9-NK8" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="MmV-Kz-emf"/>
+                    <constraint firstItem="1xY-H9-Lyh" firstAttribute="leading" secondItem="15l-Py-jwP" secondAttribute="trailing" constant="25" id="Riy-9j-LqL"/>
+                    <constraint firstAttribute="bottom" secondItem="15l-Py-jwP" secondAttribute="bottom" constant="20" id="SUg-O0-qUd"/>
+                    <constraint firstItem="15l-Py-jwP" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="jYX-L1-Rvx"/>
+                    <constraint firstItem="Tsj-a9-NK8" firstAttribute="leading" secondItem="1xY-H9-Lyh" secondAttribute="trailing" constant="5" id="ptW-Yu-gsp"/>
+                    <constraint firstItem="15l-Py-jwP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="t0X-ZO-ndm"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="192.75362318840581" y="159.375"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="StarFill" width="20" height="20"/>
+        <image name="TinyUser" width="60" height="60"/>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
