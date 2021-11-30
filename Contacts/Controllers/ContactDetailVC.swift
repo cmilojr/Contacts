@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol UpdateContactProtocol {
+    func updateIsFavoriteContact(id: String, isFavorite: Bool)
+}
+
 class ContactDetailVC: UIViewController {
     @IBOutlet weak var detailInfoTableView: UITableView!
     @IBOutlet weak var contactPicture: UIImageView!
@@ -17,6 +21,14 @@ class ContactDetailVC: UIViewController {
     let contactDetailVM = ContactDetailVM()
     var contactInfo: ContactsModel!
     var detailInfoInSecctions: [DetailSecctions]!
+    var updateContactProtocol: UpdateContactProtocol!
+    var isFav: Bool! {
+        didSet {
+            DispatchQueue.main.async {
+                self.isFavoriteButton.image = self.isFav ? UIImage(named: "StarFill") : UIImage(named: "StarNotFill")
+            }
+        }
+    }
     
     fileprivate func registerTVCell() {
         let nib = UINib(nibName: Constants.CellIdentifier.infoDetailCell, bundle: nil)
@@ -24,8 +36,12 @@ class ContactDetailVC: UIViewController {
     }
     
     @IBAction func isFavoriteAction(_ sender: Any) {
-        
+        if let id = contactInfo.id {
+            isFav = !isFav
+            updateContactProtocol.updateIsFavoriteContact(id: id, isFavorite: isFav)
+        }
     }
+        
     fileprivate func setupView() {
         if let largeImageURL = contactInfo.largeImageURL {
             contactPicture.download(from: largeImageURL)
@@ -34,7 +50,7 @@ class ContactDetailVC: UIViewController {
         contactCompanyName.text = contactInfo.companyName
         
         if let isFavorite = contactInfo.isFavorite {
-            isFavoriteButton.image = isFavorite ? UIImage(named: "StarFill") : UIImage(named: "StarNotFill")
+            isFav = isFavorite
         } else {
             isFavoriteButton.customView?.isHidden = true
         }

@@ -13,7 +13,20 @@ class ContactsVC: UIViewController {
     
     let contactsVM = ContactsVM()
     
-    var contacts: [[ContactsModel]] = [[]]
+    var contacts: [ContactsModel] = [] {
+        didSet {
+            self.contactsFiltered = self.contactsVM.filter(contacts: self.contacts)
+        }
+    }
+    
+    var contactsFiltered: [[ContactsModel]] = [[]] {
+        didSet {
+            DispatchQueue.main.async {
+                self.contactsTableView.reloadData()
+            }
+        }
+    }
+        
     var selectedContact: ContactsModel! {
         didSet {
             self.performSegue(withIdentifier: Constants.SegueIdentifier.showDetailSegue, sender: nil)
@@ -38,10 +51,7 @@ class ContactsVC: UIViewController {
                 if let error = error {
                     self.errorBanner(error)
                 } else if let contacts = res {
-                    self.contacts = self.contactsVM.filter(contacts: contacts)
-                    DispatchQueue.main.async {
-                        self.contactsTableView.reloadData()
-                    }
+                    self.contacts = contacts
                 }
             }
         }
@@ -57,34 +67,41 @@ class ContactsVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? ContactDetailVC {
             vc.contactInfo = self.selectedContact
+            vc.updateContactProtocol = self
         }
     }
 }
 
 extension ContactsVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.selectedContact = contacts[indexPath.section][indexPath.row]
+        self.selectedContact = contactsFiltered[indexPath.section][indexPath.row]
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.contacts.count
+        return self.contactsFiltered.count
     }
 }
 
 extension ContactsVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.contacts[section].count
+        return self.contactsFiltered[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ContactCell = tableView.dequeueReusableCell(withIdentifier: Constants.CellIdentifier.contactCell, for: indexPath) as! ContactCell
-        let contact = self.contacts[indexPath.section][indexPath.row]
+        let contact = self.contactsFiltered[indexPath.section][indexPath.row]
         cell.setInfoToView(with: contact)
         return cell
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return contactsVM.headerOfSecction[section]
+    }
+}
+
+extension ContactsVC: UpdateContactProtocol {
+    func updateIsFavoriteContact(id: String, isFavorite: Bool) {
+        contactsVM.updateInfo(of: &contacts, by: id, with: isFavorite)
     }
 }

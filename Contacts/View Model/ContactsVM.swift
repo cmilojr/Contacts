@@ -31,4 +31,10 @@ struct ContactsVM {
         
         return [fav,notFav]
     }
+    
+    func updateInfo(of contacts: inout [ContactsModel], by id: String, with value: Bool) {
+        if let row = contacts.firstIndex(where: {$0.id == id}) {
+            contacts[row].isFavorite = value
+        }
+    }
 }
