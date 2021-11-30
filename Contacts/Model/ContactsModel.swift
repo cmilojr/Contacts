@@ -33,3 +33,8 @@ struct Address: Decodable {
     var zipCode: String?
 }
 
+struct DetailSecctions {
+    var title: String
+    var subTitle: String?
+    var value: String
+}

@@ -63,10 +63,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UF3-mn-YHn">
-                        <barButtonItem key="rightBarButtonItem" title="Fav" image="StarFill" id="mJO-gR-kn1"/>
+                        <barButtonItem key="rightBarButtonItem" title="Fav" image="StarFill" id="mJO-gR-kn1">
+                            <connections>
+                                <action selector="isFavoriteAction:" destination="Y6W-OH-hqX" id="roc-mW-z3j"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="contactCompanyName" destination="6LV-Vg-nkx" id="wh4-Yk-TfM"/>
+                        <outlet property="contactName" destination="QaX-Nf-euB" id="RwL-dS-GXC"/>
+                        <outlet property="contactPicture" destination="Xgp-sc-V6k" id="syJ-p0-1E5"/>
                         <outlet property="detailInfoTableView" destination="k3P-sA-gro" id="2l0-gn-5xb"/>
+                        <outlet property="isFavoriteButton" destination="mJO-gR-kn1" id="PAn-Mo-BbA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

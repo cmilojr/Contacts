@@ -21,8 +21,16 @@ struct Constants {
         static let showDetailSegue = "showDetailSegue"
     }
     
-    struct SBIdentifier {
-        
+    struct ContactTitles {
+        static let phone = "phone"
+        static let work = "work"
+        static let home = "home"
+        static let mobile = "mobile"
+        static let street = "street"
+        static let city = "city"
+        static let state = "state"
+        static let country = "country"
+        static let zipCode = "zip code"
     }
 }
 

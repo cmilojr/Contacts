@@ -16,6 +16,17 @@ class InfoDetailCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func setInfoToView(with info: DetailSecctions) {
+        if info.subTitle != nil {
+            subKindOfCell.text = info.subTitle?.capitalizingFirstLetter()
+        } else {
+            subKindOfCell.isHidden = true
+        }
+        
+        kindOfCell.text = info.title.uppercased()
+        infoCell.text = info.value.uppercased()
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
