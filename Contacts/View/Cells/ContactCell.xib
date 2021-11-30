@@ -63,6 +63,12 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="contactImage" destination="15l-Py-jwP" id="sDZ-7o-4x2"/>
+                <outlet property="contactInfoLabel" destination="ZTY-Jf-Xnm" id="jlo-j4-1dt"/>
+                <outlet property="contactNameLabel" destination="oGm-Jj-5f3" id="zoy-4a-w0o"/>
+                <outlet property="starImage" destination="1xY-H9-Lyh" id="DLJ-sT-c3O"/>
+            </connections>
             <point key="canvasLocation" x="192.75362318840581" y="159.375"/>
         </tableViewCell>
     </objects>

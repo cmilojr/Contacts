@@ -8,7 +8,10 @@
 import UIKit
 
 class InfoDetailCell: UITableViewCell {
-
+    @IBOutlet weak var kindOfCell: UILabel!
+    @IBOutlet weak var subKindOfCell: UILabel!
+    @IBOutlet weak var infoCell: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

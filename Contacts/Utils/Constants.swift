@@ -24,11 +24,5 @@ struct Constants {
     struct SBIdentifier {
         
     }
-
-    struct CustomColors {
-        static let mintGreen = UIColor(named: "MintGreen")
-        static let red = UIColor(named: "Red")
-        static let softPurple = UIColor(named: "SoftPurple")
-    }
 }
 
