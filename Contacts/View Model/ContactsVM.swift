@@ -8,6 +8,7 @@
 import Foundation
 
 struct ContactsVM {
+    let headerOfSecction = ["FAVORITE CONTACTS","OTHER CONTACTS"]
     
     func getContacts(completion: @escaping ([ContactsModel]?, Error?) -> Void) {
         Networking.shared.get(URL(string:(Constants.API.contacts))!) { (res: [ContactsModel]?, error: Error?) in
@@ -17,5 +18,17 @@ struct ContactsVM {
                 completion(contacts, nil)
             }
         }
+    }
+    
+    func filter(contacts: [ContactsModel]) -> [[ContactsModel]] {
+        let fav = contacts.filter {
+            $0.isFavorite == true
+        }
+        
+        let notFav = contacts.filter {
+            $0.isFavorite == false
+        }
+        
+        return [fav,notFav]
     }
 }
