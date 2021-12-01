@@ -4,34 +4,24 @@
 //
 //  Created by Camilo Jimenez on 15/09/21.
 //
-@testable import PokeAPI
+@testable import Contacts
 import XCTest
 
 class NetworkingTests: XCTestCase {
-
     var networking = Networking.shared
     
     func testGetListUrlTestError() throws {
-        networking.get(URL(string: "www.error-1.com")!) { (res: [GenerationsModel]?, error: Error?) in
-            if let _ = error {
-                XCTFail()
-            } else {
-                XCTAssertTrue(res != nil)
-            }
+        networking.get(URL(string: "www.error-1.com")!) { (res: [ContactsModel]?, error: Error?) in
+            assert(error != nil)
         }
     }
-    
-    
-    func testGetListDecodeTest() throws {
-        networking.get(URL(string: Constants.API.RandomPokemonList())!) { (res: [GenerationsModel]?, error: Error?) in
-            if let _ = error {
-                XCTFail()
-            } else {
-                XCTAssertTrue(res != nil)
-            }
+   
+    func testGetListUrlTest() throws {
+        networking.get(URL(string: Constants.API.contacts)!) { (res: [ContactsModel]?, error: Error?) in
+            assert(res != nil)
         }
     }
-    
+
     override class func tearDown() {
         super.tearDown()
     }
