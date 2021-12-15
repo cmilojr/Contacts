@@ -57,11 +57,29 @@ class ContactsVC: UIViewController {
         }
     }
     
+    fileprivate func navigationBarAppearance() {
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor =  UIColor(red: 0/255.0, green: 170/255.0, blue: 0/255.0, alpha: 1.0)
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.compactAppearance = appearance
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         registerTVCell()
         getContacts()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+
+            navigationBarAppearance()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
